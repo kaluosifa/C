@@ -3,14 +3,9 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "gcc",
-			"command": "D:\\mingw64\\bin\\gcc.exe",
-			"args": [
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe",
-			],
+			"label": "build",
+			"command": "D:\\MSYS2-64\\usr\\bin\\make.exe",
+			"args": [],
 			"options": {
 				"cwd": "${workspaceFolder}"
 			},
