@@ -8,7 +8,7 @@
             "name": "(gdb) 启动",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\a.exe",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -16,7 +16,7 @@
             "externalConsole": true,
             "MIMode": "gdb",
             "preLaunchTask": "build",
-            "miDebuggerPath": "D:\\MSYS2-64\\usr\\bin\\gdb.exe",
+            "miDebuggerPath": "D:/MSYS2-64/mingw64/bin/gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
