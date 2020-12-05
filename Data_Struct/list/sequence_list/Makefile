@@ -1,15 +1,16 @@
-CC = gcc
-CCFLAGS = -Wall -Werror -Wextra -pedantic -std=c11 -g -fsanitize=address
-LDFLAGS =  -fsanitize=address
+CC=gcc
+args=-c -g -std=c11 -Wall
+src=main.c Sequence_list.c
 
-SRC = 
-OBJ = $(SRC:.cc=.o)
-EXEC = a
+target : main.o Sequence_list.o
+	$(CC) -o a.exe $^
 
-all: $(EXEC)
+main.o : main.c
+	$(CC) $(args) $^
 
-$(EXEC): $(OBJ)
-	$(CC) $(LDFLAGS) -o $@ $(OBJ) $(LBLIBS)
+Sequence_list.o : Sequence_list.c Sequence_list.h
+	$(CC) $(args) $<
 
+.PHONY : clean
 clean:
-	rm -rf $(OBJ) $(EXEC)
+	-rm *.o

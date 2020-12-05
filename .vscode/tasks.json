@@ -4,15 +4,10 @@
 		{
 			"type": "shell",
 			"label": "build",
-			"command": "D:\\MSYS2-64\\mingw64\\bin\\gcc.exe",
-			"args": [
-				"-g",
-                 "${file}",
-                 "-o",
-                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
-			],
+			"command": "make",
+			"args": [],
 			"options": {
-				"cwd": "${workspaceFolder}"
+				"cwd": "${relativeFileDirname}"
 			},
 			"problemMatcher": [
 				"$gcc",
