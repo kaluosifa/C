@@ -3,9 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
-                "${workspaceFolder}/Data Struct/**",
-                "${workspaceFolder}/Data Struct/list/sequence list"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",

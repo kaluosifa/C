@@ -1,2 +1,7 @@
 {
+    //"c-cpp-compile-run.run-args": "-std=c11",
+    "c-cpp-compile-run.run-in-external-terminal": true,
+    "code-runner.runInTerminal": true,
+    "code-runner.saveAllFilesBeforeRun": true,
+    "code-runner.saveFileBeforeRun": true
 }

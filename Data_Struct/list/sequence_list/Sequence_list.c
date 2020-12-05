@@ -1,4 +1,4 @@
-#include <Sequence_list.h>
+#include <E:/VS Code-projects/C/Data_Struct/list/sequence_list/Sequence_list.h>
 
 void InitList(pList L)
 {
@@ -26,7 +26,8 @@ int InsList(pList L, int i, Elem e)
     if (i < 1 || i > L->last+1)
         return -2;
 
-    for (int x = L->last; x >= i-1; x--) {
+    int x;
+    for (x = L->last; x >= i-1; x--) {
         L->elem[x+1] = L->elem[x];
     }
     L->elem[i-1] = e;
@@ -43,7 +44,8 @@ int DelList(pList L, int i, Elem *e)
     
     *e = L->elem[i-1];
 
-    for (int x = i; x <= L->last; x++) {
+    int x;
+    for (x = i; x <= L->last; x++) {
         L->elem[x-1] = L->elem[x];
     }
 
@@ -55,12 +57,16 @@ int Locate(pList L, Elem e)
     if (!EmptyList(L))
         return -1;
 
-    for (int i = 0; i <= L->last; i++) {
+    int i;
+    for (i = 0; i <= L->last; i++) {
         if (L->elem[i] == e)    
-            return i+1;
-        else
-            return -2;
+            break;
     }
+
+    if (i > L->last)
+        return -2;
+    else
+        return i+1;
 }
 
 void DestroyList(pList L)

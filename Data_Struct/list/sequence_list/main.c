@@ -1,12 +1,14 @@
 #include <stdio.h>
-#include <Sequence_list.h>
+#include <E:/VS Code-projects/C/Data_Struct/list/sequence_list/Sequence_list.h>
 
 int main()
 {
-    pList l;
+    List L;
+    pList l = &L;
     InitList(l);
 
-    for (int i = 1; i < 5; i++) {
+    int i;
+    for (i = 1; i < 5; i++) {
         if (InsList(l, i, i+1) == -1) {
             printf("表满了！\n");
             break;
