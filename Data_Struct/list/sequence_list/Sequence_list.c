@@ -23,14 +23,21 @@ int InsList(pList L, int i, Elem e)
 {
     if (!FullList(L))
         return -1;
-    if (i < 1 || i > L->last+1)
-        return -2;
-
-    int x;
-    for (x = L->last; x >= i-1; x--) {
-        L->elem[x+1] = L->elem[x];
+    if (!EmptyList(L)) {
+        if (i-1 == L->last+1) {
+            L->elem[L->last+1] = e;
+            L->last++;
+        } else {
+            return -2;
+        }
+    } else {
+        int x;
+        for (x = L->last; x >= i-1; x--) {
+            L->elem[x+1] = L->elem[x];
+        }
+        L->elem[i-1] = e;
+        L->last++;
     }
-    L->elem[i-1] = e;
 
     return 0;
 }
@@ -39,7 +46,7 @@ int DelList(pList L, int i, Elem *e)
 {
     if (!EmptyList(L))
         return -1;
-    if (i < 1 || i > L->last)
+    if (i < 1 || i > L->last+1)
         return -2;
     
     *e = L->elem[i-1];
