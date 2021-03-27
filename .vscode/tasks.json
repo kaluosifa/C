@@ -5,7 +5,14 @@
 			"type": "shell",
 			"label": "build",
 			"command": "make",
-			"args": [],
+			"args": [
+				"-Wall",
+				"-g",
+				"${file}",
+				"-o",
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				"-fexec-charset=GBK"
+			],
 			"options": {
 				"cwd": "${relativeFileDirname}"
 			},
